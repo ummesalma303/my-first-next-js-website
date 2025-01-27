@@ -1,14 +1,25 @@
+"use client";
+import Link from 'next/link'
+import { usePathname } from 'next/navigation'
+// import { usePathname } from 'next/navigation'
 import React from 'react'
 
 export default function NavBar() {
-  return (
-    <nav className='flex justify-center items-center py-3'>
-      <ul className='flex space-x-4'>
-        <li>Home</li>
-        <li>About</li>
-        <li>Services</li>
-        <li>Contact</li>
-       </ul>
-    </nav>
-  )
+  const pathname = usePathname()
+  if (!pathname.includes("dashboard")) {
+    
+    return (
+      <nav className='flex justify-center items-center py-3'>
+        <ul className='flex space-x-4'>
+          <li><Link href='/'>Home</Link></li>
+          <li><Link href='/about'>About</Link></li>
+          <li><Link href='/services'>Services</Link></li>
+          <li><Link href='/contact'>Contact</Link></li>
+          
+         </ul>
+      </nav>
+    )
+  }else{
+    return<></>
+  }
 }

@@ -25,9 +25,12 @@ export default function RootLayout({ children }) {
       >
       <NavBar/>
 
-      <main>
+      <main className="h-[80vh] mx-auto">
         {children}
       </main>
+      <footer className="text-center w-full py-9">
+        <h2>Professionally maximize interactive alignments rather than timely imperatives. Enthusiastically brand emerging e-business.</h2>
+      </footer>
       </body>
     </html>
   );
